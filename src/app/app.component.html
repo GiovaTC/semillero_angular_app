@@ -2,21 +2,16 @@
   <div class="sidebar">
     <!-- Contenido del menú lateral -->
     <app-logo></app-logo>
+    <br>
     <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Buscar</a></li>
-      <li><a href="#">Explorar</a></li>
-      <li><a href="#">Reels</a></li>
-      <li><a href="#">Mensajes</a></li>
-      <li><a href="#">Notificaciones</a></li>
-      <li><a href="#">Crear</a></li>
-      <li><a href="#">Perfil</a></li>
+      <li *ngFor="let item of menuItems" [routerLink]="item.link">
+        <i [class]="item.iconClass"></i>
+        <a href="#">{{ item.label }}</a>
+      </li>
     </ul>
   </div>
   <div class="content">
     <!-- Contenido principal -->
-    <h1>Contenido Principal</h1>
-    <p>Este es el contenido principal de la página.</p>
+    <router-outlet></router-outlet>
   </div>
 </div>
-
