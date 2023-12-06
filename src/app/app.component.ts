@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PersonalInformationService } from './services/personal-information.service';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,47 @@ export class AppComponent {
     { label: ' Perfil', link: '/perfil', iconClass: 'fas fa-user' }
   ];
 }
+
+@Component({
+  selector: 'app-profile',
+  template: `
+    <h2>Imagenes</h2>
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let row of imageRows">
+          <td *ngFor="let imageUrl of row">
+            <img [src]="imageUrl" alt="Instagram Image" class="img-fluid mb-3">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  `,
+  styles: [`
+    /* Puedes agregar estilos personalizados aquí si es necesario */
+  `]
+})
+export class ProfileComponent implements OnInit {
+  profileName = 'example_profile';
+  imageList: string[] = [];
+  imageRows: string[][] = [];
+
+  constructor(private instagramService: PersonalInformationService) {}
+
+  ngOnInit(): void {
+    this.imageList = this.instagramService.generateImageList(this.profileName);
+    this.imageRows = this.chunkArray(this.imageList, 5); // Ahora se dividen en filas de 5 imágenes
+  }
+
+  // Función para dividir la lista de imágenes en filas
+  chunkArray(array: any[], size: number): any[] {
+    const chunkedArray = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunkedArray.push(array.slice(i, i + size));
+    }
+    return chunkedArray;
+  }
+}
+
 
 
 

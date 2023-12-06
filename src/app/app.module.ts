@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { AppComponent, ProfileComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogoComponent } from './logo/logo.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -13,6 +13,8 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
 import { CrearComponent } from './crear/crear.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { PersonalInformationService } from './services/personal-information.service';
+import { NetworkService } from './services/network.service';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,16 @@ import { PrincipalComponent } from './principal/principal.component';
     NotificacionesComponent,
     CrearComponent,
     PerfilComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PersonalInformationService, NetworkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
