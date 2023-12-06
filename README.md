@@ -1,4 +1,9 @@
 # MiniInstagram
+![EvidenciaFuncionamiento02](https://github.com/GiovaTC/semillero_angular_app/assets/90740161/7db8ddae-072e-4359-9b4b-1e8ee5344dbc)
+
+![EvidenciaFuncionamiento03](https://github.com/GiovaTC/semillero_angular_app/assets/90740161/4b80a0ae-d3e0-49ae-bb54-2420f2ef8854)
+
+![EvidenciaFuncionamiento04](https://github.com/GiovaTC/semillero_angular_app/assets/90740161/cb69f4fc-6003-4a9a-967f-5d29c4728ebe)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.9.
 
