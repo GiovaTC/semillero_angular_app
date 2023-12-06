@@ -48,10 +48,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.imageList = this.instagramService.generateImageList(this.profileName);
-    this.imageRows = this.chunkArray(this.imageList, 5); // Ahora se dividen en filas de 5 imágenes
+    this.imageRows = this.chunkArray(this.imageList, 5); 
   }
 
-  // Función para dividir la lista de imágenes en filas
   chunkArray(array: any[], size: number): any[] {
     const chunkedArray = [];
     for (let i = 0; i < array.length; i += size) {

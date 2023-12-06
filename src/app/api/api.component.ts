@@ -15,7 +15,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./api.component.css']
 })
 export class ApiComponent implements OnInit {
-  post: any; // Cambia 'any' por el tipo específico de tu objeto si es conocido
+  post: any; 
   error: string | undefined;
 
   constructor(private apiService: ApiService) {}

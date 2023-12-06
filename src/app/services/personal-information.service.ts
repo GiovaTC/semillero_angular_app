@@ -7,7 +7,7 @@ import { NetworkService } from './network.service';
 export class PersonalInformationService {
 
   generateImageList(profileName: string): string[] {
-    // Simulando la generación de una lista de imágenes
+ 
     const imageList: string[] = [];
 
     for (let i = 1; i <= 10; i++) {
