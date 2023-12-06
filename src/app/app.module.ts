@@ -15,6 +15,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { PersonalInformationService } from './services/personal-information.service';
 import { NetworkService } from './services/network.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
+import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +32,15 @@ import { NetworkService } from './services/network.service';
     CrearComponent,
     PerfilComponent,
     PrincipalComponent,
-    ProfileComponent
+    ProfileComponent,
+    ApiComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [PersonalInformationService, NetworkService],
+  providers: [PersonalInformationService, NetworkService,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
